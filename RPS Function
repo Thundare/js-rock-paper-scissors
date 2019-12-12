@@ -1,0 +1,37 @@
+
+let response = prompt("rock, paper, or scissors?")
+rps(response.toLowerCase(), computerPlay());
+
+function computerPlay() {
+  let compResult = Math.floor(Math.random() * 100);
+  if (compResult < 33) {
+    let rockType = 'rock';
+    return rockType;
+  } else if (compResult > 33 && compResult < 67) {
+    let paperType = 'paper';
+    return paperType;
+  } else {
+    let scissorsType = 'scissors';
+    return scissorsType;
+  }
+}
+
+function rps(playerSelection, computerSelection) {
+  switch (true) {
+    case playerSelection == computerSelection:
+      console.log("It's a tie! You both lose!")
+      break;
+    case playerSelection == "rock" && computerSelection == "paper":
+      console.log("You lose! Paper covers Rock!");
+      break;
+    case playerSelection == "paper" && computerSelection == "rock":
+      console.log("You won! Paper covers Rock!");
+      break;
+    case playerSelection == "scissors" && computerSelection == "rock":
+      console.log("You lose! Rock crushes Scissors!");
+      break;
+    case playerSelection == "rock" && computerSelection == "scissors":
+      console.log("You won! Rock crushes Scissors!");
+      break;
+  }
+}
