@@ -1,1 +1,1 @@
-# js-rock-paper-scissors
+# small script test
